@@ -1,4 +1,5 @@
 var score=0;
+var highscore=getCookie("highscore") || 0;
 var boxes=collToList(document.getElementsByClassName("box"));
 
 function random(min,max){
@@ -6,7 +7,13 @@ function random(min,max){
 }
 
 function bttnClick(num){
-	if (num===boxNum) score++;
+	if (num===boxNum) {
+		score++;
+		if (score>highscore) {
+			highscore=score;
+			setCookie("highscore", highscore, 365);
+		}
+	}
 	else score-=2;
 	updateScore();
 	updateBlocks();
@@ -21,5 +28,7 @@ function updateBlocks() {
 }
 function updateScore(){
 	document.getElementById("boxgame-score").innerHTML=score;
+	document.getElementById("boxgame-highscore").innerHTML=highscore;
 }
 updateBlocks();
+updateScore(15);
