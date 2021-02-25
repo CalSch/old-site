@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CalSch | Cal.js</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+		<div w3-include-html="/nav.html"></div>
+		<h1>Cal.js</h1>
+		<p>Cal.js is my own JavaScript library. It's just a bunch of functions that make things easier and other stuff mashed together.</p>
+		<hr>
+		<h2>Docs</h2>
+
+		<h3>Show/Hide:</h3>
+		<p>Show/Hide is a thing I made where you can have hidden text like this: <span class="show-hide">This is hidden by default</span>. If you want to have this in your website, make sure the <code>showHideEnabled</code> variable is set to <code>true</code> in Cal.js, for anything you want to hide just add <code>show-hide</code> to the class list of the element.</p>
+
+		<h3><code>collToList()</code>:</h3>
+		<p><code>collToList()</code> is a function that takes in an HTMLCollection object and gives out a list of all the elements inside it.</p>
+
+		<h3><code>CustomElement()</code>:</h3>
+		<p><code>CustomElement()</code> is a function that lets you make custom elements, you give it the tag name (a string), the attributes (a list), and a function. Example: <span class="show-hide">if you wanted a custom element called <code>repeat</code>, and there was an attribute called <code>times</code>, and it would reapeat the text in it that many times, the function would be this: <code>
+CustomElement("repeat",["times"], function(element,args){<br>
+&nbsp;&nbsp;element.innerHTML=element.innerHTML.repeat(args.times);<br>
+});
+		</code></span></p>
+
+		<hr>
+		<h2>Download</h2>
+		<p>You can download the file <a href="./cal.js" download>here</a>.</p>
+		<p>Feel free to change it up a bit, but please credit me when you use it by putting something like "using cal.js" in your webpage :)</p>
+		<script src="/js/script.js"></script>
+  </body>
+</html>

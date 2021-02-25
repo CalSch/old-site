@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CalSch | Unix Timestamp</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+		<div w3-include-html="/nav.html"></div>
+		<h1>Unix Timestamp Viewer</h1>
+		<p id="s">Seconds: N/A</p>
+		<p id="ms">Milliseconds: N/A</p>
+		<script>
+			var run=true;
+			function update(){
+				if (!run) return;
+				let s=Math.floor(Date.now() / 1000);
+				let ms=Date.now();
+				document.getElementById("s").innerHTML="Seconds: "+s;
+				document.getElementById("ms").innerHTML="Milliseconds: "+ms;
+			}
+			setInterval(update,7);
+		</script>
+		<button onclick="run=!run;">Start/Stop</button>
+		<script src="/js/script.js"></script>
+  </body>
+</html>

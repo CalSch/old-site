@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CalSch | Projects | HTML Viewer</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<style>
+			#html-result,#title{
+				border-style: groove;
+				border-width: 2px;
+				border-radius: 15px;
+			}
+	</style>
+  </head>
+  <body>
+		<div w3-include-html="/nav.html"></div>
+		<h1>HTML Viewer</h1>
+		<p>This lets you view your HTML in real time.</p>
+		<textarea placeholder="HTML here..." id="html-text" cols=83 rows=20 onkeyup="update();"></textarea>
+		<hr>
+		Title: <div id="title"></div>
+		<iframe id="html-result" width="600px" height="375px">Test</iframe>
+		
+		<script src="/js/script.js"></script>
+		<script>
+			var htmlText=document.getElementById("html-text");
+			var x=document.getElementById("html-result");
+			var htmlTitle=document.getElementById("title");
+			
+			function update() {
+				x.contentDocument.open();
+				x.contentDocument.write(htmlText.value);
+				x.contentDocument.close();
+				htmlTitle.innerText=htmlResult.contentDocument.title;
+			}
+			update();
+		</script>
+  </body>
+</html>

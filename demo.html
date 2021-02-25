@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CalSch</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+		<div w3-include-html="/nav.html"></div>
+		<h1>Welcome!</h1>
+		<div class="box round" style="width:83px;height:57px;">
+			<button style="width:25px;height:25px;" class="box grey2" onclick="bttnClick(1);" id="box1"></button>
+			<button style="width:25px;height:25px;" class="box grey2" onclick="bttnClick(2);" id="box2"></button>
+			<button style="width:25px;height:25px;" class="box grey2" onclick="bttnClick(3);" id="box3"></button>
+			<br>
+			<button style="width:25px;height:25px;" class="box grey2" onclick="bttnClick(4);" id="box4"></button>
+			<button style="width:25px;height:25px;" class="box grey2" onclick="bttnClick(5);" id="box5"></button>
+			<button style="width:25px;height:25px;" class="box grey2" onclick="bttnClick(6);" id="box6"></button>
+		</div><p>Score: <span id="score">0</span></p>
+		<script src="/js/script.js"></script>
+		<script src="/js/boxgame.js"></script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+}
+
+button {
+	font-family: 'Ubuntu', sans-serif;
+	background-color: #ececec;
+	border: 3px solid #ececec;
+	border-radius: 3px;
+	padding: 2px;
+	cursor: pointer;
+}
+button.big{
+	padding: 10px;
+	font-size: 13pt;
+}
+
+a.cool {
+	background-color: #ececec;
+	border: 3px solid #ececec;
+	padding: 2px;
+	color: black;
+	border-radius: 3px;
+}
+
+.center {
+	text-align:center;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  color: #cfcfcf;
+	background-color: rgb(54, 54, 54);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+	border: 0px none;
+}
+.topnav a:hover {
+  background-color: rgb(99, 99, 99);
+  color: white;
+	border: 0px none;
+}
+.topnav a.active {
+  background-color: rgb(21, 113, 219);
+  color: white;
+	border: 0px none;
+}
+
+.box{
+	border: 3px solid;
+	border-radius: 3px;
+	background-color: #ececec;
+	border-color: #ececec;
+}
+.box.round{
+	border-radius: 6px;
+}
+.box.grey1{
+	background-color: #ececec;
+	border-color: #ececec;
+}
+.box.grey2{
+	background-color: rgb(185, 185, 185);
+	border-color: rgb(185, 185, 185);
+}
+.box.blue{
+	background-color: #0385ff;
+	border-color: #0385ff;
+}
+.box.red{
+	background-color: #f83016;
+	border-color: #f83016;
+}
+.box.green{
+	background-color: #1ae46e;
+	border-color: #1ae46e;
+}
+
+.hidden {
+	display: none;
+}
+
+code {
+	border: 1px solid;
+	border-radius: 3px;
+	background-color: #eeeeee;
+	border-color: #eeeeee;
+	font-family: "PT Mono", sans-serif;
+}
+
+.boxgameBttn {
+	float: right;
+	position: fixed;
+	right: 10px;
+	bottom: 20px;
+	box-shadow:5px 10px 13px -7px #0000007e;
+}
+
+.boxgame-container {
+	color: #f3f3f3;
+	background-color: #171e49;
+	padding: 5px;
+	padding-right: 15px;
+	padding-left: 15px;
+	border-style: solid;
+	border-color: #171e49;
+	border-radius: 5px;
+	border-width: 3px;
+	float: right;
+	position: fixed;
+	right: 10px;
+	bottom: 20px;
+	box-shadow:5px 10px 13px -7px #0000007e;
+}
