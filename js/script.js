@@ -73,34 +73,43 @@ function includeHTML() {
 includeHTML();
 
 function langImg() {
-	document.body.innerHTML=document.body.innerHTML.replace(/<!--html5-->/g,"<img src=\"https://repl.it/public/images/languages/web_project.svg\", width=20, height=20>");
-	document.body.innerHTML=document.body.innerHTML.replace(/<!--python-->/g,"<img src=\"https://repl.it/public/images/languages/python.svg\", width=20, height=20>");
+	document.body.innerHTML=document.body.innerHTML.replace(/<!--html5 small-->/g,"<img src=\"https://repl.it/public/images/languages/web_project.svg\", width=20, height=20>");
+	document.body.innerHTML=document.body.innerHTML.replace(/<!--python small-->/g,"<img src=\"https://repl.it/public/images/languages/python.svg\", width=20, height=20>");
+
+	document.body.innerHTML=document.body.innerHTML.replace(/<!--html5 big-->/g,"<img src=\"https://repl.it/public/images/languages/web_project.svg\", width=20, height=20>");
+	document.body.innerHTML=document.body.innerHTML.replace(/<!--python big-->/g,"<img src=\"https://repl.it/public/images/languages/python.svg\", width=20, height=20>");
+	
 }
 
-document.write("\n<div w3-include-html=\"/boxgame_button.html\"></div>");
 
-setTimeout(function(){
-	console.log("boxgame");
-
-	var boxgameButton = document.getElementsByClassName("boxgameBttn")[0];
-	var boxgameContainer = document.getElementsByClassName("boxgame-container")[0];
-
-	$(boxgameContainer).hide();
-	$(boxgameButton).click(function(){
+window.onload = function() {
+	//document.write("\n<div w3-include-html=\"/boxgame_button.html\"></div>");
+	let i = document.createElement("DIV");
+	i.setAttribute("w3-include-html","/boxgame_button.html");
+	document.body.appendChild(i);
+	setTimeout(function(){
 		console.log("boxgame");
-		$(boxgameButton).fadeOut("fast",function(){
-			$(boxgameContainer).load("/boxgame.html",function(){
-				$(boxgameContainer).fadeIn();
-				$("#boxgame-quit").click(function(){
-					$(boxgameContainer).fadeOut("fast",function(){
-						$(boxgameContainer).innerHTML="";
-						$(boxgameButton).fadeIn();
+
+		var boxgameButton = document.getElementsByClassName("boxgameBttn")[0];
+		var boxgameContainer = document.getElementsByClassName("boxgame-container")[0];
+
+		$(boxgameContainer).hide();
+		$(boxgameButton).click(function(){
+			console.log("boxgame");
+			$(boxgameButton).fadeOut("fast",function(){
+				$(boxgameContainer).load("/boxgame.html",function(){
+					$(boxgameContainer).fadeIn();
+					$("#boxgame-quit").click(function(){
+						$(boxgameContainer).fadeOut("fast",function(){
+							$(boxgameContainer).innerHTML="";
+							$(boxgameButton).fadeIn();
+						});
 					});
 				});
 			});
 		});
-	});
-},400);
+	},300);
+}
 
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
