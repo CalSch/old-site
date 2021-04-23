@@ -2,9 +2,10 @@ try {
 
   alert("Terminal init")
 
-  let term={
+  var term={
     running: false,
     start: function(){
+      alert("started")
       while (this.running){
         let cmd=getInput();
         let codeReturn=null,
