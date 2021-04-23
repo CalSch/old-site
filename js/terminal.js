@@ -77,7 +77,7 @@ try {
     makeModal("cr","hey",codeReturn)
   }
   function getInput(){
-    return prompt("1+1");
+    return "1+1"
   }
 
   term.start()
