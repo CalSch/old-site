@@ -5,6 +5,7 @@ try {
   var term={
     running: false,
     start: function(){
+      this.running=true;
       alert("started")
       while (this.running){
         let cmd=getInput();
