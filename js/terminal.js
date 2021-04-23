@@ -1,6 +1,7 @@
 try{
 
-
+alert("started")
+  
 let term={
   running: false,
   start: function(){
