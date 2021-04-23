@@ -8,6 +8,7 @@ try {
       this.running=true;
       alert("started")
       while (this.running){
+        if (!this.running) return;
         let cmd=getInput();
         let codeReturn=null,
             isError=false;
