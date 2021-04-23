@@ -23,6 +23,9 @@ try {
           onCmdRan(cmd,codeReturn)
         }
       }
+    },
+    stop: function(){
+      this.running=true;
     }
   };
   let bsCDN={
@@ -41,12 +44,36 @@ try {
   document.head.appendChild(bsCDN.js)
   document.head.appendChild(bsCDN.jquery)
   document.head.appendChild(bsCDN.popper)
+  
+  function makeModal(id,titleHTML,bodyHTML){
+    let modal=document.createElement("div")
+    modal.classList.add("modal")
+    modal.classList.add("fade")
+    modal.id=id
+    let dialog=document.createElement("div")
+    dialog.classList.add("modal-dialog")
+    let content=document.createElement("div")
+    content.classList.add("modal-content")
+    let header=document.createElement("div")
+    header.classList.add("modal-header")
+    let body=document.createElement("div")
+    body.classList.add("modal-body")
+    
+    body.innerHTML=bodyHTML
+    header.innerHTML=titleHTML
+    
+    content.appendChild(header)
+    content.appendChild(body)
+    dialog.appendChild(content)
+    modal.appendChild(dialog)
+    document.body.appendChild(modal)
+  }
 
   function onError(message){
     alert("error:"+message)
   }
   function onCmdRan(cmd,codeReturn){
-    alert(codeReturn)
+    makeModal("cr","hey",codeReturn)
   }
   function getInput(){
     return prompt("1+1");
