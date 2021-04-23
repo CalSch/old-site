@@ -1,6 +1,6 @@
 try {
 
-  alert("started")
+  alert("Terminal init")
 
   let term={
     running: false,
@@ -41,16 +41,16 @@ try {
   document.head.appendChild(bsCDN.popper)
 
   function onError(message){
-
+    alert("error:"+message)
   }
   function onCmdRan(cmd,codeReturn){
-
+    alert(codeReturn)
   }
   function getInput(){
-    return "1+1";
+    return prompt("1+1");
   }
 
-  //term.start()
+  term.start()
   
 } catch(e){
   alert(e.message)
