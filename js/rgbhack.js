@@ -1,4 +1,4 @@
-alert("Hack started v5.1")
+alert("Hack started v5.2")
 try{
   function hide(elm){elm.style.display="none"}
   function show(elm){elm.style.display="initial"}
@@ -61,7 +61,7 @@ try{
 <div id="hack-menu-debug">
 
 <p>Save data:</p>
-<pre id="hack-save" style="width: 30px; word-wrap: break-word"></pre>
+<pre id="hack-save" style="max-width: 70px; word-wrap: break-word"></pre>
 </div>`;
   let hackMenu=document.createElement("div")
   hackMenu.id="hack-menu";
