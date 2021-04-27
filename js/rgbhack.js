@@ -7,6 +7,11 @@ try{
   hackMenu.style.position="fixed";
   hackMenu.style.left="5px";
   hackMenu.style.bottom="5px";
+  hackMenu.style.borderRadius="15px";
+  hackMenu.style.borderStyle="solid";
+  hackMenu.style.borderColor="#d18324";
+  hackMenu.style.borderWidth="2px";
+  hackMenu.style.padding="5px";
   hackMenu.innerHTML=hackMenuContent;
 
   document.body.appendChild(hackMenu);
