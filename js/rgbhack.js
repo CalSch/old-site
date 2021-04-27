@@ -1,4 +1,4 @@
-alert("Hack started v5")
+alert("Hack started v5.1")
 try{
   function hide(elm){elm.style.display="none"}
   function show(elm){elm.style.display="initial"}
@@ -43,7 +43,7 @@ try{
     grab("#hack-save").innerText=btoa(JSON.stringify(player))
   }
   let hackMenuContent=`<h3>Hack Menu</h3>
-<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));">Set Values</button>|
+<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));">Set Values</button> |
 <button onclick="show(grab('#hack-menu-debug'));hide(grab('#hack-menu-setval'));hackDebug()">Debug</button>
 <hr>
 <div id="hack-menu-setval">
@@ -61,7 +61,7 @@ try{
 <div id="hack-menu-debug">
 
 <p>Save data:</p>
-<pre id="hack-save" style="word-wrap: break-word"></pre>
+<pre id="hack-save" style="width: 30px; word-wrap: break-word"></pre>
 </div>`;
   let hackMenu=document.createElement("div")
   hackMenu.id="hack-menu";
