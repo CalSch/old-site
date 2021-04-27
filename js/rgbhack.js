@@ -1,5 +1,8 @@
-alert("Hack started 2")
+alert("Hack started v3")
 try{
+  function hide(elm){elm.style.display="none"}
+  function show(elm){elm.style.display="initial"}
+  function grab(q){return document.querySelector(q)}
   function setRedBar(){
     let val=parseInt(prompt("Red bar value:"));
     player.money.red=val;
@@ -37,6 +40,8 @@ try{
     player.level.blue[3]=val;
   }
   let hackMenuContent=`<h3>Hack Menu</h3>
+<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));" style="">Set Values</button>|<button onclick="show(grab('#hack-menu-debug'));hide(grab('#hack-menu-setval'));">Debug</button>
+<div id="hack-menu-setval">
 <button onclick="setRedBar()">Set red bar value</button><br>
 <button onclick="setGreenBar()">Set green bar value</button><br>
 <button onclick="setBlueBar()">Set blue bar value</button><br>
@@ -46,7 +51,11 @@ try{
 <button onclick="setBlue1Level()">#1</button>
 <button onclick="setBlue2Level()">#2</button>
 <button onclick="setBlue3Level()">#3</button>
-<button onclick="setBlue4Level()">#4</button>`;
+<button onclick="setBlue4Level()">#4</button>
+</div>
+<div id="hack-menu-debug">
+debug
+</div>`;
   let hackMenu=document.createElement("div")
   hackMenu.id="hack-menu";
   hackMenu.style.backgroundColor="orange";
