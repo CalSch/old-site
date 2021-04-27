@@ -1,4 +1,4 @@
-alert("Hack started v4")
+alert("Hack started v5")
 try{
   function hide(elm){elm.style.display="none"}
   function show(elm){elm.style.display="initial"}
@@ -59,8 +59,9 @@ try{
 <button onclick="setBlue4Level()">#4</button>
 </div>
 <div id="hack-menu-debug">
+
 <p>Save data:</p>
-<pre id="hack-save"></pre>
+<pre id="hack-save" style="word-wrap: break-word"></pre>
 </div>`;
   let hackMenu=document.createElement("div")
   hackMenu.id="hack-menu";
