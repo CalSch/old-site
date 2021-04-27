@@ -1,4 +1,4 @@
-alert("Hack started v3")
+alert("Hack started v4")
 try{
   function hide(elm){elm.style.display="none"}
   function show(elm){elm.style.display="initial"}
@@ -39,8 +39,13 @@ try{
     let val=parseInt(prompt("Blue upgrade #4 level:"));
     player.level.blue[3]=val;
   }
+  function hackDebug(){
+    grab("#hack-save").innerText=btoa(JSON.stringify(player))
+  }
   let hackMenuContent=`<h3>Hack Menu</h3>
-<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));" style="">Set Values</button>|<button onclick="show(grab('#hack-menu-debug'));hide(grab('#hack-menu-setval'));">Debug</button>
+<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));">Set Values</button>|
+<button onclick="show(grab('#hack-menu-debug'));hide(grab('#hack-menu-setval'));hackDebug()">Debug</button>
+<hr>
 <div id="hack-menu-setval">
 <button onclick="setRedBar()">Set red bar value</button><br>
 <button onclick="setGreenBar()">Set green bar value</button><br>
@@ -54,7 +59,8 @@ try{
 <button onclick="setBlue4Level()">#4</button>
 </div>
 <div id="hack-menu-debug">
-debug
+<p>Save data:</p>
+<pre id="hack-save"></pre>
 </div>`;
   let hackMenu=document.createElement("div")
   hackMenu.id="hack-menu";
