@@ -1,3 +1,4 @@
+alert("Hack started")
 try{
   let hackMenuContent=`<h3>Hack Menu</h3>`;
   let hackMenu=document.createElement("div")
