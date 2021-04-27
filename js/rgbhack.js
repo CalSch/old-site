@@ -1,21 +1,52 @@
-alert("Hack started 1")
+alert("Hack started 2")
 try{
   function setRedBar(){
-    let val=prompt("Red bar value:");
+    let val=parseInt(prompt("Red bar value:"));
     player.money.red=val;
   }
   function setGreenBar(){
-    let val=prompt("Green bar value:");
+    let val=parseInt(prompt("Green bar value:"));
     player.money.green=val;
   }
   function setBlueBar(){
-    let val=prompt("Blue bar value:");
+    let val=parseInt(prompt("Blue bar value:"));
     player.money.blue=val;
   }
+  function setRedLevel(){
+    let val=parseInt(prompt("Red upgrade level:"));
+    player.level.red=val;
+  }
+  function setGreenLevel(){
+    let val=parseInt(prompt("Green upgrade level:"));
+    player.level.green=val;
+  }
+  function setBlue1Level(){
+    let val=parseInt(prompt("Blue upgrade #1 level:"));
+    player.level.blue[0]=val;
+  }
+  function setBlue2Level(){
+    let val=parseInt(prompt("Blue upgrade #2 level:"));
+    player.level.blue[1]=val;
+  }
+  function setBlue3Level(){
+    let val=parseInt(prompt("Blue upgrade #3 level:"));
+    player.level.blue[2]=val;
+  }
+  function setBlue4Level(){
+    let val=parseInt(prompt("Blue upgrade #4 level:"));
+    player.level.blue[3]=val;
+  }
   let hackMenuContent=`<h3>Hack Menu</h3>
-<button onclick="setRedBar()">Set red bar value</button>
-<button onclick="setGreenBar()">Set green bar value</button>
-<button onclick="setBlueBar()">Set blue bar value</button>`;
+<button onclick="setRedBar()">Set red bar value</button><br>
+<button onclick="setGreenBar()">Set green bar value</button><br>
+<button onclick="setBlueBar()">Set blue bar value</button><br>
+<button onclick="setRedLevel()">Set red upgrade level</button><br>
+<button onclick="setGreenLevel()">Set green upgrade level</button><br>
+<p>Set blue upgrade levels:</p>
+<button onclick="setBlue1Level()">#1</button>
+<button onclick="setBlue2Level()">#2</button>
+<button onclick="setBlue3Level()">#3</button>
+<button onclick="setBlue4Level()">#4</button>`;
   let hackMenu=document.createElement("div")
   hackMenu.id="hack-menu";
   hackMenu.style.backgroundColor="orange";
