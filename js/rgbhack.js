@@ -1,4 +1,4 @@
-alert("Hack started v5.2")
+alert("Hack started v5.3")
 try{
   function hide(elm){elm.style.display="none"}
   function show(elm){elm.style.display="initial"}
@@ -23,27 +23,22 @@ try{
     let val=parseInt(prompt("Green upgrade level:"));
     player.level.green=val;
   }
-  function setBlue1Level(){
-    let val=parseInt(prompt("Blue upgrade #1 level:"));
-    player.level.blue[0]=val;
+  function setSpectrum(){
+    let val=parseInt(prompt("Spectrum:"));
+    player.spectrum=val;
   }
-  function setBlue2Level(){
-    let val=parseInt(prompt("Blue upgrade #2 level:"));
-    player.level.blue[1]=val;
+  function setBlueLevel(i){
+    let val=parseInt(prompt("Blue upgrade #"+i.toString()+" level:"));
+    player.level.blue[i-1]=val;
   }
-  function setBlue3Level(){
-    let val=parseInt(prompt("Blue upgrade #3 level:"));
-    player.level.blue[2]=val;
+  function playerDataSave(){
+    player=JSON.parse(grab("#hack-player-data").value);
   }
-  function setBlue4Level(){
-    let val=parseInt(prompt("Blue upgrade #4 level:"));
-    player.level.blue[3]=val;
-  }
-  function hackDebug(){
-    grab("#hack-save").innerText=btoa(JSON.stringify(player))
+  function playerDataLoad(){
+    grab("#hack-player-data").value=JSON.stringify(player);
   }
   let hackMenuContent=`<h3>Hack Menu</h3>
-<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));">Set Values</button> |
+<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));" onload="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));">Set Values</button> |
 <button onclick="show(grab('#hack-menu-debug'));hide(grab('#hack-menu-setval'));hackDebug()">Debug</button>
 <hr>
 <div id="hack-menu-setval">
@@ -53,15 +48,18 @@ try{
 <button onclick="setRedLevel()">Set red upgrade level</button><br>
 <button onclick="setGreenLevel()">Set green upgrade level</button><br>
 <p>Set blue upgrade levels:</p>
-<button onclick="setBlue1Level()">#1</button>
-<button onclick="setBlue2Level()">#2</button>
-<button onclick="setBlue3Level()">#3</button>
-<button onclick="setBlue4Level()">#4</button>
+<button onclick="setBlueLevel(1)">#1</button>
+<button onclick="setBlueLevel(2)">#2</button>
+<button onclick="setBlueLevel(3)">#3</button>
+<button onclick="setBlueLevel(4)">#4</button><br>
+<button onclick="setSpectrum()">Set spectrum</button>
 </div>
-<div id="hack-menu-debug">
 
-<p>Save data:</p>
-<pre id="hack-save" style="max-width: 70px; word-wrap: break-word"></pre>
+<div id="hack-menu-debug">
+<p>Player data:</p>
+<textarea id="hack-player-data"></textarea><br>
+<button onclick="playerDataSave()">Save</button> |
+<button onclick="playerDataLoad()">Load</button>
 </div>`;
   let hackMenu=document.createElement("div")
   hackMenu.id="hack-menu";
