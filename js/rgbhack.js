@@ -1,4 +1,4 @@
-alert("Hack started v5.3")
+alert("Hack started v6")
 try{
   function hide(elm){elm.style.display="none"}
   function show(elm){elm.style.display="initial"}
@@ -38,7 +38,7 @@ try{
     grab("#hack-player-data").value=JSON.stringify(player);
   }
   let hackMenuContent=`<h3>Hack Menu</h3>
-<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));" onload="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));">Set Values</button> |
+<button onclick="show(grab('#hack-menu-setval'));hide(grab('#hack-menu-debug'));">Set Values</button> |
 <button onclick="show(grab('#hack-menu-debug'));hide(grab('#hack-menu-setval'));hackDebug()">Debug</button>
 <hr>
 <div id="hack-menu-setval">
@@ -55,7 +55,7 @@ try{
 <button onclick="setSpectrum()">Set spectrum</button>
 </div>
 
-<div id="hack-menu-debug">
+<div id="hack-menu-debug" style="display: none;">
 <p>Player data:</p>
 <textarea id="hack-player-data"></textarea><br>
 <button onclick="playerDataSave()">Save</button> |
